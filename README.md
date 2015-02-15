@@ -23,7 +23,7 @@ Dependencies
 Build
 -----
 
-    go build -o bin/gopywatch denormans/gopywatch
+    go build -o bin/gopywatch denormans/gopywatch/main
 
 Run
 ---
