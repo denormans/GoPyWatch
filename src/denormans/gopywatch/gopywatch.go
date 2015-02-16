@@ -3,7 +3,8 @@ package gopywatch
 type EventType uint32
 
 const (
-	ProgramDone EventType = 1 << iota
+	ProgramStarted EventType = 1 << iota
+	ProgramDone
 	Restart
 	Quit
 )

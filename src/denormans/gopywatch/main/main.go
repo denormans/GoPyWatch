@@ -58,8 +58,6 @@ func main() {
 		go gopywatch.ListenForExtraDirEvents(pythonEnv, extraWatchDirPath)
 	}
 
-	interactiveStarted := false
-
 	// run the program for the first time
 	go pythonEnv.Run()
 
@@ -68,18 +66,6 @@ func main() {
 		event := <-pythonEnv.Events
 
 		switch event.Type {
-		case gopywatch.ProgramDone:
-			if isInteractive {
-				// interactive mode should never start until the first python run is done
-				if !interactiveStarted {
-					go pythonEnv.ProcessInteractive()
-					interactiveStarted = true
-				}
-			} else {
-				// if the program is done, and we're not in interactive mode, quit
-				return
-			}
-
 		case gopywatch.Restart:
 			go pythonEnv.Restart()
 
