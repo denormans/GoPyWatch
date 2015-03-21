@@ -18,12 +18,12 @@ It should pick up file changes automatically for OS X. Feel free to contribute s
 Dependencies
 ------------
 
-    go get denormans/gopywatch
+    make dependencies
 
 Build
 -----
 
-    go build -o bin/gopywatch denormans/gopywatch/main
+    make
 
 Run
 ---
